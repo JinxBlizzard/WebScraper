@@ -18,10 +18,11 @@ def job_filter():
         # get_company_name = job.find('a', class_="link_display_like_text")
         get_job_type = job.find('div', class_="company")
         if get_time is not None:
-            get_job_type = get_job_type.text.replace(' \n', '')
-            get_time = get_time.text.replace(' \n', '')
+            get_job_type = get_job_type.text.replace('\n', '')
+            get_job_type = get_job_type.replace(' ', '')
+            get_time = get_time.text.replace('\n', '')
             print(f"""
-            job type = {get_job_type.strip()}
+            job type = {get_job_type}
             time posted = {get_time.strip()}
             """)
 
